@@ -404,11 +404,11 @@ class freichatX extends freichatXconstruct {
     public function call_driver($options) {
 
         $update_usr_info = false;
-
+        if(isset($_SESSION[$this->uid . 'custom_mesg'] || $_SESSION[$this->uid . 'in_room'])) {
         if ($_SESSION[$this->uid . 'custom_mesg'] != $options['custom_mesg']
                 || $_SESSION[$this->uid . 'in_room'] != $options['in_room']) {
             $update_usr_info = true;
-        }
+        }}
 
         $sessions = new $this->driver($this->db);
         $sessions->uid = $this->uid;
@@ -654,7 +654,9 @@ class freichatX extends freichatXconstruct {
 
         $curr_time = $_GET['time'];
         $chatroom_mesg_time = $_GET['chatroom_mesg_time'];
+        if(isset($_SESSION[$this->uid . 'in_room'])) {
         $active_room = $_SESSION[$this->uid . 'in_room'];
+        }
 
         $get_mesg = $this->get_messages($curr_time);
        // $this->delete_messages();
@@ -782,8 +784,9 @@ class freichatX extends freichatXconstruct {
            // $this->delete_messages();
             $this->update_messages($active_room);
 
+            if(isset($_SESSION[$this->uid . 'custom_mesg'])) {
             $_SESSION[$this->uid . 'custom_mesg'] = $custom_mesg;
-
+            }
             $freichat->chatroom_messages = $this->get_chatroom_messages($active_room, 'single', $chatroom_mesg_time);
             //$last_chatroom_message = end($this->chatroom_raw_mesgs);
             // $freichat->last_chatroom_usr_id = $last_chatroom_message['from'];
@@ -874,7 +877,9 @@ class freichatX extends freichatXconstruct {
             $this->db->query($query);
         }}
 
+        if(isset($_SESSION[$this->uid . 'freistatus'])) {
         $_SESSION[$this->uid . 'freistatus'] = (int) $_POST['freistatus'];
+        }
 
         $freichat->status = (int) $_POST['freistatus'];
         $freichat->id = $user_id;
