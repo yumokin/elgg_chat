@@ -404,11 +404,11 @@ class freichatX extends freichatXconstruct {
     public function call_driver($options) {
 
         $update_usr_info = false;
-        if(isset($_SESSION[$this->uid . 'custom_mesg'] || $_SESSION[$this->uid . 'in_room'])) {
+      
         if ($_SESSION[$this->uid . 'custom_mesg'] != $options['custom_mesg']
                 || $_SESSION[$this->uid . 'in_room'] != $options['in_room']) {
             $update_usr_info = true;
-        }}
+        }
 
         $sessions = new $this->driver($this->db);
         $sessions->uid = $this->uid;
