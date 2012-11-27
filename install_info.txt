@@ -1,0 +1,2 @@
+	* To install and upgrade see : http://webgalli.com/blog/facebook-like-chat-for-elgg/
+	* If you are using the source file from github, rename the plugin folder from "elgg_chat" to "chat"

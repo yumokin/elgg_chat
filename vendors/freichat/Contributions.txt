@@ -1,0 +1,40 @@
+						FreiChat Contributions
+						```````` `````````````
+
+A project like FreiChatX requires the dedication and investment of personal time from various contributors.
+This version of FreiChatX has been made possible by the following contributors :
+
+==============================================================================================
+Sebi - SoS
+Email:admin@riddletown.net
+Contibution:    Solved the long username issue
+		Reported a lot of bugs during FreiChatx's Development
+		Gave many suggestions to improve FreiChatX
+		Created Language file for
+Country:Austria
+==============================================================================================
+Anton Skvortsov
+Email:anton_skv@hotmail.com
+Contribution :  newmsg.mp3 (The sound that you hear when new messages arrive)
+                Sent Jomsocial code for developing early version of FreiChatSocial
+country:New York, NY 
+=============================================================================================
+Encipoly
+Email: kis.erno@digitalvac.hu
+Contribution : Contributed Hungary Language file
+=============================================================================================
+
+In addition many members of evnix.com have contributed and helped make this a more stable and bugfree version.
+Our thanks go out to all contributors of FreiChatx! 
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~External Libraries/Scripts Used by FreiChatX~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+1 . JQuery 				 http://jquery.com
+2 . JQuery  UI	     			 http://http://jqueryui.com
+3 . Simple Gallery 	[JQuery plugin]
+4 . edit_area 		[plugin]
+5 . SoundManager2 	[JavaScript Sound]

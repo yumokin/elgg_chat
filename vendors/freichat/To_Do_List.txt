@@ -1,0 +1,173 @@
+================================================================================================
+                             --X--My Personal To Do List--X--
+================================================================================================
+
+1. Multiple Tabs Not updated- Solution do not use recd but time [SOLVED!]
+
+2. Create drivers for Drupal,WordPress, etc [done]
+
+3. Change min image to max and hide trash image when chat window is minimized [Done!]
+
+4. Better Doumentation and read me [done!]
+
+5. Show chatbox option in backend[done]
+
+6. Themes option in backend[done]
+
+7. Show css file in backend And other backend parameters. [Done]
+
+8. Busy away online offline status to be added [Done!]
+
+9. Chat containers i.e freicontain update by oldest to be closed [Done!]
+
+10. Option to choose both guests and registered AND only registered [Done!]
+
+11. In built Translation [Done!]
+
+12. Pin FreiChat and go anonymous [Done!]
+
+13. Sending and recieving files [Done!]
+
+14. VOIP
+
+15. Resizable chatbox [Not possible!]
+
+16. Arguments for themes[done]
+
+17. Languages Added [Done]
+
+18. Make freichat.js pure javascript based [done]
+
+19. Add Avatar  [done]
+
+20. Add Community Builder driver [done]
+
+21. Add CBE driver[done]
+
+22. Long username issue fix[Done]
+
+23. Make it Work in IE[Done]
+
+24. FreichatX debugging [Done]
+
+25. Add phpBB driver [Done]
+
+26. Separate CSS for every style [Not Sure!]
+
+27. Option for name/username [Done for Joomla]
+
+29. Option for friends in CBE and JCB [Done!]
+
+30. Allow new lines and remove goAnonymous [Done!]
+
+31. Remove All conflicts with help of objects [Done!]
+
+32. Solve the Draggable problem [Done!]
+
+33. Reduce requests as much as possible [Will Go On forever!]
+
+34. Logged out can post messages, z-index problem , option for avatar, new message
+    focus problem in chrome. [Done All!]
+
+35. Show online users count [Done]
+
+36. Image change on new message [Done]
+
+37. Quick installation [Done for Joomla]
+
+38. Major draggable bug [Done]
+
+39. Unicode Support [Done]
+
+40. improved minimize and maximize and plenty css issues and order of online list [Done]
+
+41. Auto increase width with name length
+
+42. File should get encrypted name before uploading .
+
+43. Block parallel requests with .complete [Done!]
+
+/* 6 minor 4 major bugs*/
+/* CSS changed lot compatibilty */
+
+BUG::  z-index for opera
+
+/*5.0
+44. Auto install joomla,drupal,wordpress driver
+45. Improved HTML CSS AGAIN!
+46. ADDED spanish,dutch language
+47. Installation made better CLass
+48. File upload security [Done!]
+49. XHASH security [Done!]
+51. ADODB removed [Done]
+52. Queries combined [Done almost]
+53. mEssages are not recieved properly 20x.cc when tested very fast
+54. Smiley on the fly
+55. Save option messages
+56. send saved conversation by email
+57. invalid install uid when module install not used
+58. Looks like PhpBB doesnt has if statement for reducing resources in its driver in getdbdata()
+59. Google clickable url bug solved replace ' by "
+60. www./https Same origin policy
+61. Backward compatibility for themes
+Solved str replaces chrome bugs
+*/5.0
+
+
+FreichatX 5.2 
+62 JS tweaks 
+63 Freichat in any directory and path to it i mean outside joomla
+64 Custom message feature added.
+
+
+6.0
+New message title should not be changed when the user is offline
+Segregate javascript.
+segregate PHP
+recieve messages in multiple tabs too
+
+6.1 
+UTF-8 support for custom mesg [Done]
+Translate plugin [verify its working properly]
+Documentation for custom driver
+custom driver working now!
+changed fromname to Me
+mesg on same line
+JS & CSS improvement
+
+6.2
+Title change for multiple chatwindows bug fixed
+Message on chatwindow if user goes offline
+Make chatrooms to load asynchronously ( done)
+Updated jquery
+Reduced jquery ui its css and reduced overall size of code
+GZIP option added in backend
+
+
+63.  ...Wait I am Thinking....
+x=================================================================================================x
+function completeWork(work)
+{
+ completeme=true;
+ worktodo=work;
+ Didwork=DoWork; //Work is complete
+ completed_work=DidWork;
+ return completed_work;
+}
+x=================================================================================================x
+
+go to freichat/server/admin.php
+add the following line in the very beginning of the code, the file should look as follows
+<?php
+header('Content-Type: text/html; charset=utf-8');
+and also add this meta tag in the head tag, the code will look as follows,
+<head>
+<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8“ />
+
+this fix will be a part of the next release.
+
+HIGHLIGHT message sent with alice , !!
+
+
+BUGS :
+Once gone busy chances of user to get deleted [done]

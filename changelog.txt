@@ -1,0 +1,21 @@
+*************	Freichat - Elgg Integration by Team Webgalli	*****************
+*************			http://webgalli.com						*****************
+
+Version 1.8.1
+Initial release
+
+Version 1.2.181
+Instead of username, it will now show display name in chat window
+Removed some unnecessery files
+
+Version 1.3.181
+Fixed a security issue in the install.php
+
+Version 1.4.181
+Upgraded freichat to 6.2
+
+Version 1.5
+Updated or Elgg 1.8.3
+
+Version 1.6
+Updated Freichat to 7.2
