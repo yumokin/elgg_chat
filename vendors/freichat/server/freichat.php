@@ -63,8 +63,12 @@ class freichatX extends freichatXconstruct {
         parent::__construct();
         require_once RDIR . '/server/drivers/' . $this->driver . '.php';
         $this->url = str_replace('server/freichat.php', '', $this->url);
+        if(isset($_SESSION[$this->uid . 'usr_ses_id'])) {
         $this->frm_id = $_SESSION[$this->uid . 'usr_ses_id'];
+        }
+        if(isset($_SESSION[$this->uid . 'usr_name'])) {
         $this->frm_name = $_SESSION[$this->uid . 'usr_name'];
+        }
         $this->connectDB();
 
 
@@ -258,7 +262,9 @@ class freichatX extends freichatXconstruct {
         $freichat = new freichat();
 
         $active_room = (int) $_GET['in_room'];
+        if(isset($_SESSION[$this->uid . 'in_room'])) {
         $_SESSION[$this->uid . 'in_room'] = $active_room;
+        }
 
         $chatroom_mesg_time = $_GET['chatroom_mesg_time'];
 
@@ -398,7 +404,7 @@ class freichatX extends freichatXconstruct {
     public function call_driver($options) {
 
         $update_usr_info = false;
-
+      
         if ($_SESSION[$this->uid . 'custom_mesg'] != $options['custom_mesg']
                 || $_SESSION[$this->uid . 'in_room'] != $options['in_room']) {
             $update_usr_info = true;
@@ -470,9 +476,9 @@ class freichatX extends freichatXconstruct {
 
         $update_usr_info = false;
 
-
+        if(isset($_SESSION[$this->uid . 'in_room'])) {
         $_SESSION[$this->uid . 'in_room'] = $active_room;
-
+        }
 
         if (!isset($_SESSION[$this->uid . 'custom_mesg'])) {
             $_SESSION[$this->uid . 'custom_mesg'] = $this->frei_trans['default_status'];
@@ -558,9 +564,9 @@ class freichatX extends freichatXconstruct {
 
         $frm_id = $this->frm_id;
 
-
+        if(isset($_SESSION[$this->uid . 'in_room'])) {
         $active_room = $_SESSION[$this->uid . 'in_room'];
-
+        }
 
         if ($this->show_chatroom_plugin == 'enabled') {
 
@@ -586,8 +592,9 @@ class freichatX extends freichatXconstruct {
 //$this->change_custom_status_mesg($_GET['custom_mesg']);     
 
         $freichat->islog = $this->check_perms();
+        if(isset($_SESSION[$this->uid . 'freistatus'])) {
         $freichat->status = $_SESSION[$this->uid . 'freistatus'];
-
+        }
         $freichat->userdata = $text;
         $freichat->count = $onlcnt;
         $freichat->username = str_replace("'", "", $this->frm_name);
@@ -647,7 +654,9 @@ class freichatX extends freichatXconstruct {
 
         $curr_time = $_GET['time'];
         $chatroom_mesg_time = $_GET['chatroom_mesg_time'];
+        if(isset($_SESSION[$this->uid . 'in_room'])) {
         $active_room = $_SESSION[$this->uid . 'in_room'];
+        }
 
         $get_mesg = $this->get_messages($curr_time);
        // $this->delete_messages();
@@ -775,8 +784,9 @@ class freichatX extends freichatXconstruct {
            // $this->delete_messages();
             $this->update_messages($active_room);
 
+            if(isset($_SESSION[$this->uid . 'custom_mesg'])) {
             $_SESSION[$this->uid . 'custom_mesg'] = $custom_mesg;
-
+            }
             $freichat->chatroom_messages = $this->get_chatroom_messages($active_room, 'single', $chatroom_mesg_time);
             //$last_chatroom_message = end($this->chatroom_raw_mesgs);
             // $freichat->last_chatroom_usr_id = $last_chatroom_message['from'];
@@ -854,17 +864,22 @@ class freichatX extends freichatXconstruct {
 //---------------------------------------------------------------------------------
     public function update_status() {
         $freichat = new freichat();
+        if(isset($_SESSION[$this->uid . 'gst_ses_id'])) {
         $user_id = $_SESSION[$this->uid . 'gst_ses_id'];
+        }
         $freistatus = (int) $_POST['freistatus'];
 
+        if(isset($_SESSION[$this->uid . 'freistatus'])) {
         if ($_SESSION[$this->uid . 'freistatus'] != $_POST['freistatus']) {
             $freistatus = ($freistatus == 4) ? 3 : $freistatus;
 
             $query = "UPDATE frei_session set status=" . $this->db->quote($freistatus) . " WHERE permanent_id=" . $user_id;
             $this->db->query($query);
-        }
+        }}
 
+        if(isset($_SESSION[$this->uid . 'freistatus'])) {
         $_SESSION[$this->uid . 'freistatus'] = (int) $_POST['freistatus'];
+        }
 
         $freichat->status = (int) $_POST['freistatus'];
         $freichat->id = $user_id;
